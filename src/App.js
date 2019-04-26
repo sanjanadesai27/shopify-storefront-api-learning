@@ -1,17 +1,91 @@
 import React, { Component } from 'react';
 import './App.css';
-import Product from './Product';
+// import Product from './Product';
+import Header from './Header';
+import CollectionViewer from './CollectionViewer';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
 class App extends Component {
+  
+  constructor() { 
+    super();
+
+    this.state = { 
+      products: []
+    }
+  }
+
   render() {
+
+    if (this.props.data.loading) {
+      return <p>Loading ...</p>;
+    }
+    if (this.props.data.error) {
+      return <p>{this.props.data.error.message}</p>;
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <Product></Product>
-        </header>
+          <Header storeName={this.props.data.shop.name}/>
+          <CollectionViewer collections={this.props.data.shop.collections}/>
       </div>
     );
   }
 }
+const query = gql `
+  query { 
+    shop { 
+      name
+      description
+      collections(first:20){ 
+        edges { 
+          node {
+            title
+            id
+            products(first:20){ 
+              edges { 
+                node { 
+                  id
+                  title
+                  images(first:10){
+                    edges {
+                      node { 
+                        originalSrc
+                        altText
+                      }
+                    }
+                  }
+                  variants(first:20){ 
+                    edges { 
+                      node { 
+                        id 
+                        title
+                        selectedOptions { 
+                          name
+                          value
+                        }
+                        image { 
+                          src
+                        } 
+                        priceV2 {
+                          amount
+                          currencyCode
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
 
-export default App;
+    }
+  }
+`;
+
+
+const AppWithData = graphql(query)(App); //creates a HOC for app such that query data can be passed down as props
+
+export default AppWithData;

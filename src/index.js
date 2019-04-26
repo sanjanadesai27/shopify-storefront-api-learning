@@ -9,9 +9,9 @@ import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const httpLink = createHttpLink({
-   uri: 'https://plants-n-coffee.myshopify.com/api/graphql',
+   uri: 'https://kewl-store-bruh.myshopify.com/api/graphql',
    headers: {
-    'X-Shopify-Storefront-Access-Token': 'a4935a204d2d1c36322da8a6cfdf8a1c'
+    'X-Shopify-Storefront-Access-Token': '1472f8f00e9ead5d8affe5709a8be98b'
   } 
 })
 
