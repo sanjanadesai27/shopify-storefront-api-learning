@@ -1,0 +1,10 @@
+.product{
+  flex: 1 0 30vh;
+  margin: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between
+}
+.product__image { 
+  width: 100%;
+}

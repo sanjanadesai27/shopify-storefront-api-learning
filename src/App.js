@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Product from './Product';
 import Header from './Header';
 import CollectionViewer from './CollectionViewer';
 import { graphql } from 'react-apollo';
@@ -47,6 +46,11 @@ const query = gql `
                 node { 
                   id
                   title
+                  options { 
+                    id
+                    name
+                    values
+                  }
                   images(first:10){
                     edges {
                       node { 
