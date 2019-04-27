@@ -5,29 +5,14 @@ import VariantSelector from './VariantSelector';
 export default class Product extends Component {
   constructor(props){ 
     super(props)
-    
+
     this.state = {
       selectedVariant: this.props.product.variants.edges[0].node,
-      // selectedOptions: this.props.product.options.forEach(select => { 
-      //   return {[select.name]: select.values[0]}
-      // })
+      selectedOptions: Object.assign(...this.props.product.options.map(option => ({[option.name]:option.values[0]})))
     }
-    // console.log(this.props.product.options)
+
     this.handleSelect = this.handleSelect.bind(this)
   }
-
-  componentWillMount(){ 
-    this.props.product.options.forEach(select => { 
-      this.setState({
-        selectedOptions: {[select.name]: select.values[0]}
-      })
-    })
-  }
-
-  // when a product's options are selected, what do we want to happen?
-  // - get the selected option and store it in state
-  // use the selected options to determine which variant should be added to cart
-  // once you find the right variant, store that in state too
 
   handleSelect(event){ 
     let selectedOptions = this.state.selectedOptions
@@ -44,6 +29,7 @@ export default class Product extends Component {
   }
 
   render() {
+    console.log(this.state)
     let product = {...this.props.product}
     let variant = this.state.selectedVariant
     let variantSelect = product.options.map(option => {
