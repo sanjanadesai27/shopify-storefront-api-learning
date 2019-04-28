@@ -4,15 +4,23 @@ import Header from './Header';
 import CollectionViewer from './CollectionViewer';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import Cart from './Cart'
 
 class App extends Component {
   
   constructor() { 
     super();
 
-    this.state = { 
-      products: []
+    this.state = {
+      currentLineItems: []
     }
+
+    this.addVariantToCart = this.addVariantToCart.bind(this)
+  }
+
+  addVariantToCart(variant, quantity) { 
+    let lineItem = {variant, quantity}
+    return this.setState({currentLineItems:[...this.state.currentLineItems, lineItem]})
   }
 
   render() {
@@ -23,10 +31,12 @@ class App extends Component {
     if (this.props.data.error) {
       return <p>{this.props.data.error.message}</p>;
     }
+    console.log(this.state)
     return (
       <div className="App">
           <Header storeName={this.props.data.shop.name}/>
-          <CollectionViewer collections={this.props.data.shop.collections}/>
+          <CollectionViewer collections={this.props.data.shop.collections} addVariantToCart={this.addVariantToCart} />
+          <Cart currentLineItems={this.state.currentLineItems}></Cart>
       </div>
     );
   }
@@ -88,7 +98,6 @@ const query = gql `
     }
   }
 `;
-
 
 const AppWithData = graphql(query)(App); //creates a HOC for app such that query data can be passed down as props
 

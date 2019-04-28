@@ -10,7 +10,7 @@ export default class Collection extends Component{
         <div className="collection__product-container">
           {this.props.collection.map(product => {
             product = product.node
-            return <Product key={product.id} product={product}/>
+            return <Product key={product.id} product={product} addVariantToCart={this.props.addVariantToCart}/>
           })}
         </div>
       </section>

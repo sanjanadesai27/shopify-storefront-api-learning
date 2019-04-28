@@ -12,6 +12,7 @@ export default class Product extends Component {
     }
 
     this.handleSelect = this.handleSelect.bind(this)
+    this.handleQuantity = this.handleQuantity.bind(this)
   }
 
   handleSelect(event){ 
@@ -26,10 +27,16 @@ export default class Product extends Component {
     this.setState({
       selectedVariant
     })
+    console.log(this.state.selectedVariant)
+  }
+
+  handleQuantity(event){ 
+    this.setState({
+      variantQuantity: parseInt(event.target.value)
+    })
   }
 
   render() {
-    console.log(this.state)
     let product = {...this.props.product}
     let variant = this.state.selectedVariant
     let variantSelect = product.options.map(option => {
@@ -42,6 +49,16 @@ export default class Product extends Component {
         <h3 className="product__title">{product.title}</h3>
         <p>${variant.priceV2.amount}</p>
         {product.options[0].name !== "Title" ? variantSelect : "" } 
+        <input type="number" min="1" max="10" onChange={this.handleQuantity}/>
+
+        <button 
+          className="product__button" 
+          onClick={() => {this.props.addVariantToCart(
+              {...this.state.selectedVariant, productName: this.props.product.title},
+              this.state.variantQuantity
+          )}}>
+          Add to Cart
+        </button>
       </div> 
     );
   }

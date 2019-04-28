@@ -29,7 +29,7 @@ export default class CollectionViewer extends Component {
             return <option key={collection.node.id} value={collection.node.title}>{collection.node.title}</option>
           })}
         </select>
-        <Collection collectionName={this.state.selectedCollectionTitle} collection={this.props.collections.edges[this.state.selectedCollectionIndex].node.products.edges}/>
+        <Collection collectionName={this.state.selectedCollectionTitle} addVariantToCart={this.props.addVariantToCart} collection={this.props.collections.edges[this.state.selectedCollectionIndex].node.products.edges}/>
       </div>
     )
   }
