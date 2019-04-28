@@ -5,7 +5,6 @@ import CollectionViewer from './CollectionViewer';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import Cart from './Cart';
-import { createCheckout } from './checkout';
 
 class App extends Component {
   
@@ -17,7 +16,6 @@ class App extends Component {
     }
 
     this.addVariantToCart = this.addVariantToCart.bind(this)
-    this.createCheckout = createCheckout.bind(this)
   }
 
   addVariantToCart(variant, quantity) { 

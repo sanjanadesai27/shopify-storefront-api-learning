@@ -62,12 +62,15 @@ export default class Cart extends Component {
             {lineItem.variant.title !== "Default Title" ? ` - ${lineItem.variant.title}` : "" } 
             </p>
         })}
-        <Mutation mutation={checkoutCreate} variables={{input:{lineItems:checkoutLineItems}}}>
-          {(checkoutCreate, { data } ) => 
+        <Mutation 
+          mutation={checkoutCreate} 
+          variables={{input:{lineItems:checkoutLineItems}}}
+          onCompleted={(data)=> { window.open(data.checkoutCreate.checkout.webUrl) }}
+        >
+          {(checkoutCreateTrigger ) => 
           <div> 
-            <button onClick={checkoutCreate}>Checkout</button>
-            {console.log(data)}
-          </div> 
+            {checkoutLineItems.length > 0 ? <button onClick={checkoutCreateTrigger}>Checkout</button> : ""}
+          </div>
           }
         </Mutation>
       </div> 

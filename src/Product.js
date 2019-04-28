@@ -49,13 +49,14 @@ export default class Product extends Component {
         <h3 className="product__title">{product.title}</h3>
         <p>${variant.priceV2.amount}</p>
         {product.options[0].name !== "Title" ? variantSelect : "" } 
-        <input type="number" min="1" max="10" onChange={this.handleQuantity}/>
+        <label for="quantitySelector">Quantity</label>
+        <input id="quantitySelector" type="number" min="1" max="10" onChange={this.handleQuantity}/>
 
         <button 
           className="product__button" 
           onClick={() => {this.props.addVariantToCart(
               {...this.state.selectedVariant, productName: this.props.product.title},
-              this.state.variantQuantity
+              this.state.variantQuantity || 1
           )}}>
           Add to Cart
         </button>
