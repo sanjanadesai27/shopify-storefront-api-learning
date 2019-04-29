@@ -55,7 +55,8 @@ export default class Cart extends Component {
       return {variantId: lineItem.variant.id, quantity: lineItem.quantity }
     })
     return(
-      <div>       
+      <section className="cart">
+        <h1>Your Cart</h1> 
         {this.props.currentLineItems.map(lineItem => { 
           return <p key={lineItem.variant.id}>
             {lineItem.variant.productName} 
@@ -73,7 +74,7 @@ export default class Cart extends Component {
           </div>
           }
         </Mutation>
-      </div> 
+      </section> 
     );
   }
 }
