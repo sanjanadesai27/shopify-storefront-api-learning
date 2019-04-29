@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
           <Header storeName={this.props.data.shop.name}/>
-          <CollectionViewer collections={this.props.data.shop.collections} addVariantToCart={this.addVariantToCart} />
+          <CollectionViewer collections={this.props.data.collections} addVariantToCart={this.addVariantToCart} />
           <Cart currentLineItems={this.state.currentLineItems} checkout={this.createCheckout}></Cart>
       </div>
     );
@@ -46,45 +46,45 @@ const query = gql `
     shop { 
       name
       description
-      collections(first:20){ 
-        edges { 
-          node {
-            title
-            id
-            products(first:20){ 
-              edges { 
-                node { 
+    }
+    collections(first:20){ 
+      edges { 
+        node {
+          title
+          id
+          products(first:20){ 
+            edges { 
+              node { 
+                id
+                title
+                options { 
                   id
-                  title
-                  options { 
-                    id
-                    name
-                    values
-                  }
-                  images(first:10){
-                    edges {
-                      node { 
-                        originalSrc
-                        altText
-                      }
+                  name
+                  values
+                }
+                images(first:10){
+                  edges {
+                    node { 
+                      originalSrc
+                      altText
                     }
                   }
-                  variants(first:20){ 
-                    edges { 
-                      node { 
-                        id 
-                        title
-                        selectedOptions { 
-                          name
-                          value
-                        }
-                        image { 
-                          src
-                        } 
-                        priceV2 {
-                          amount
-                          currencyCode
-                        }
+                }
+                variants(first:20){ 
+                  edges { 
+                    node { 
+                      id 
+                      title
+                      selectedOptions { 
+                        name
+                        value
+                      }
+                      image { 
+                        src
+                      } 
+                      priceV2 {
+                        amount
+                        currencyCode
                       }
                     }
                   }
@@ -94,7 +94,6 @@ const query = gql `
           }
         }
       }
-
     }
   }
 `;
