@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles/CollectionViewer.css';
 import Collection from "./Collection";
 
 export default class CollectionViewer extends Component { 
@@ -21,7 +22,7 @@ export default class CollectionViewer extends Component {
 
   render(){ 
     return(
-      <div>
+      <div className="collection-viewer">
         <label htmlFor="collection-select">Select a Collection:</label>
         <select id="collection-select" onChange={this.handleChange} value="">
           <option value="">Select a Collection</option>

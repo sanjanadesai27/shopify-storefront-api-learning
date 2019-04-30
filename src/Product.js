@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Product.css'
+import './styles/Product.css'
 import VariantSelector from './VariantSelector';
 
 export default class Product extends Component {
@@ -40,26 +40,29 @@ export default class Product extends Component {
     let product = {...this.props.product}
     let variant = this.state.selectedVariant
     let variantSelect = product.options.map(option => {
-      return <VariantSelector key={option.id} option={option} handleSelect={this.handleSelect}/>
+      return <VariantSelector className="product__variant-select" key={option.id} option={option} handleSelect={this.handleSelect}/>
     })
 
     return (
       <div className="product">
         <img className="product__image" src={product.images.edges[0].node.originalSrc} alt={product.images.edges[0].node.altText}/>
-        <h3 className="product__title">{product.title}</h3>
-        <p>${variant.priceV2.amount}</p>
-        {product.options[0].name !== "Title" ? variantSelect : "" } 
-        <label for="quantitySelector">Quantity</label>
-        <input id="quantitySelector" type="number" min="1" max="10" onChange={this.handleQuantity}/>
-
-        <button 
-          className="product__button" 
-          onClick={() => {this.props.addVariantToCart(
-              {...this.state.selectedVariant, productName: this.props.product.title},
-              this.state.variantQuantity || 1
-          )}}>
-          Add to Cart
-        </button>
+        <div className="product__info">
+          <h3 className="product__title">{product.title}</h3>
+          <p>${variant.priceV2.amount}</p>
+        </div>
+        <div className="product__selection">
+          {product.options[0].name !== "Title" ? variantSelect : "" } 
+          <label for="quantitySelector">Quantity</label>
+          <input id="quantitySelector" defaultValue="1" type="number" min="1" max="10" onChange={this.handleQuantity}/>
+          <button 
+            className="product__button" 
+            onClick={() => {this.props.addVariantToCart(
+                {...this.state.selectedVariant, productName: this.props.product.title},
+                this.state.variantQuantity || 1
+            )}}>
+            Add to Cart
+          </button>
+        </div>
       </div> 
     );
   }

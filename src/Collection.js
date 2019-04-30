@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Product from './Product';
-import './Collection.css'
+import './styles/Collection.css'
 
 export default class Collection extends Component{ 
   render(){

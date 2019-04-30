@@ -1,0 +1,47 @@
+.header { 
+  background: linear-gradient(215deg,rgba(255, 196, 0, 0.9),rgb(255, 196, 0, 0) 70%), linear-gradient(130deg, rgba(255, 0, 132, 0.8), rgb(255,0,0,0) 70%), linear-gradient(10deg, rgba(183, 0, 255, 0.9), rgb(255,0,0,1) 100%);
+  border-radius: 0% 60%;
+  height: 100px;
+  display: flex;
+  text-align: center;
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+.header__store-title { 
+  font-family: "Mr Dafoe";
+  font-size: 50px;
+  font-weight: 100;
+  flex: 1 0 auto;
+  margin-top: 15px;
+  margin-left: 65px;;
+}
+
+.header__cart { 
+  flex: 0 1 100px;
+}
+
+
+.header__cart-link{ 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  font-family: "Muli";
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(255, 0, 132);
+  padding-right: 15px;
+  transition: color 0.3s;
+}
+
+.header__cart-link:hover { 
+ color: orange;
+}
+
+
+
+
+
+
