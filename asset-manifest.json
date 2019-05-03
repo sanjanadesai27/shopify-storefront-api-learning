@@ -1,13 +1,14 @@
 {
-  "main.css": "/shopify-storefront-api-learning/static/css/main.dc123c00.chunk.css",
-  "main.js": "/shopify-storefront-api-learning/static/js/main.1d7cb834.chunk.js",
-  "main.js.map": "/shopify-storefront-api-learning/static/js/main.1d7cb834.chunk.js.map",
+  "main.css": "/shopify-storefront-api-learning/static/css/main.dfb6dda0.chunk.css",
+  "main.js": "/shopify-storefront-api-learning/static/js/main.8731fc69.chunk.js",
+  "main.js.map": "/shopify-storefront-api-learning/static/js/main.8731fc69.chunk.js.map",
   "runtime~main.js": "/shopify-storefront-api-learning/static/js/runtime~main.7013461b.js",
   "runtime~main.js.map": "/shopify-storefront-api-learning/static/js/runtime~main.7013461b.js.map",
-  "static/js/2.f928767b.chunk.js": "/shopify-storefront-api-learning/static/js/2.f928767b.chunk.js",
-  "static/js/2.f928767b.chunk.js.map": "/shopify-storefront-api-learning/static/js/2.f928767b.chunk.js.map",
+  "static/js/2.de579351.chunk.js": "/shopify-storefront-api-learning/static/js/2.de579351.chunk.js",
+  "static/js/2.de579351.chunk.js.map": "/shopify-storefront-api-learning/static/js/2.de579351.chunk.js.map",
   "index.html": "/shopify-storefront-api-learning/index.html",
-  "precache-manifest.aa17ae1b4b2add2a39964b793fe61307.js": "/shopify-storefront-api-learning/precache-manifest.aa17ae1b4b2add2a39964b793fe61307.js",
+  "precache-manifest.03c038ae40618c6d5e1a3899daaa2b2b.js": "/shopify-storefront-api-learning/precache-manifest.03c038ae40618c6d5e1a3899daaa2b2b.js",
   "service-worker.js": "/shopify-storefront-api-learning/service-worker.js",
-  "static/css/main.dc123c00.chunk.css.map": "/shopify-storefront-api-learning/static/css/main.dc123c00.chunk.css.map"
+  "static/css/main.dfb6dda0.chunk.css.map": "/shopify-storefront-api-learning/static/css/main.dfb6dda0.chunk.css.map",
+  "static/media/bobrosslogo.png": "/shopify-storefront-api-learning/static/media/bobrosslogo.c92e9e8b.png"
 }
