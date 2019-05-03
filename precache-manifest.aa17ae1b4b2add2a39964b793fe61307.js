@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/shopify-storefront-api-learning/static/js/runtime~main.7013461b.js"
   },
   {
-    "revision": "4f98c5f959488247d394",
-    "url": "/shopify-storefront-api-learning/static/js/main.d8d21649.chunk.js"
+    "revision": "5d24031606fa36054244",
+    "url": "/shopify-storefront-api-learning/static/js/main.1d7cb834.chunk.js"
   },
   {
     "revision": "4c408fbc9b79b24e45e4",
     "url": "/shopify-storefront-api-learning/static/js/2.f928767b.chunk.js"
   },
   {
-    "revision": "4f98c5f959488247d394",
-    "url": "/shopify-storefront-api-learning/static/css/main.b533059e.chunk.css"
+    "revision": "5d24031606fa36054244",
+    "url": "/shopify-storefront-api-learning/static/css/main.dc123c00.chunk.css"
   },
   {
-    "revision": "2ed1339aec30512a6504aad684a34f76",
+    "revision": "39695a4bc87eedb8b80314a4f3d5312d",
     "url": "/shopify-storefront-api-learning/index.html"
   }
 ];
