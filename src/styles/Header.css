@@ -40,6 +40,12 @@
  color: orange;
 }
 
+.header__cart-link:focus { 
+ outline: none;
+}
+
+
+
 
 
 

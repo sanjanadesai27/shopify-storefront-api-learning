@@ -2,3 +2,53 @@
   width: 80%;
   margin: auto;
 }
+
+.collection-viewer__select{ 
+  border: none;
+  text-align: left;
+  position: relative;
+}
+
+.collection-viewer__select-dropdown{
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 1px solid orange;
+  font-family: "Muli";
+  font-size: 20px;
+  margin: 10px 20px;
+  padding: 3px;
+  transition: border 0.5s;
+}
+
+.collection-viewer__select-dropdown:hover{
+  border:  1px solid rgba(255, 0, 132);
+}
+
+.collection-viewer__select-dropdown:hover{
+  border:  1px solid rgba(255, 0, 132);
+}
+
+.collection-viewer__select-dropdown:focus{
+  outline: none;
+}
+
+.collection-viewer__select::after{
+  width: 10px;
+  height: 10px;
+  content: " ";
+  border: 3px solid orange;
+  border-radius: 3px;
+  border-top: none;
+  border-left:none;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 17px;
+  left: 290px;
+  z-index: 1;
+  transition: border 0.5s;
+}
+
+.collection-viewer__select::after:focus{
+  border:  3px solid rgba(255, 0, 132);
+} 

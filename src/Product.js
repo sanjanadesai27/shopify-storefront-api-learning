@@ -27,7 +27,6 @@ export default class Product extends Component {
     this.setState({
       selectedVariant
     })
-    console.log(this.state.selectedVariant)
   }
 
   handleQuantity(event){ 
@@ -48,7 +47,8 @@ export default class Product extends Component {
         <img className="product__image" src={product.images.edges[0].node.originalSrc} alt={product.images.edges[0].node.altText}/>
         <div className="product__info">
           <h3 className="product__title">{product.title}</h3>
-          <p>${variant.priceV2.amount}</p>
+          {/* update formatting of currency  */}
+          <p>${variant.priceV2.amount}</p> 
         </div>
         <div className="product__selection">
           {product.options[0].name !== "Title" ? variantSelect : "" } 

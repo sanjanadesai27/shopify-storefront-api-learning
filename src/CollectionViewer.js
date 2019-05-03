@@ -23,13 +23,15 @@ export default class CollectionViewer extends Component {
   render(){ 
     return(
       <div className="collection-viewer">
-        <label htmlFor="collection-select">Select a Collection:</label>
-        <select id="collection-select" onChange={this.handleChange} value="">
-          <option value="">Select a Collection</option>
-          {this.props.collections.edges.map((collection) => { 
-            return <option key={collection.node.id} value={collection.node.title}>{collection.node.title}</option>
-          })}
-        </select>
+        <fieldset className="collection-viewer__select">
+          {/* <label className="collection-viewer__select-label" htmlFor="collection-select">Select a Collection:</label> */}
+          <select className="collection-viewer__select-dropdown" id="collection-select" onChange={this.handleChange} value="">
+            <option value="">Select a Collection</option>
+            {this.props.collections.edges.map((collection) => { 
+              return <option key={collection.node.id} value={collection.node.title}>{collection.node.title}</option>
+            })}
+          </select>
+        </fieldset>
         <Collection collectionName={this.state.selectedCollectionTitle} addVariantToCart={this.props.addVariantToCart} collection={this.props.collections.edges[this.state.selectedCollectionIndex].node.products.edges}/>
       </div>
     )
