@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag'
 import { Mutation } from 'react-apollo';
+import './styles/Cart.css';
 
 let CheckoutFragment = gql`
   fragment CheckoutFragment on Checkout {
@@ -54,9 +55,13 @@ export default class Cart extends Component {
     let checkoutLineItems = this.props.currentLineItems.map(lineItem => { 
       return {variantId: lineItem.variant.id, quantity: lineItem.quantity }
     })
+    if (!this.props.cartVisible){ 
+      return null
+    }
     return(
       <section className="cart">
         <h1>Your Cart</h1> 
+        <span onClick={this.props.hideCart}>Close</span>
         {this.props.currentLineItems.map(lineItem => { 
           return <p key={lineItem.variant.id}>
             {lineItem.variant.productName} 

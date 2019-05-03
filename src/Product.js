@@ -52,7 +52,7 @@ export default class Product extends Component {
         </div>
         <div className="product__selection">
           {product.options[0].name !== "Title" ? variantSelect : "" } 
-          <label for="quantitySelector">Quantity</label>
+          <label htmlFor="quantitySelector">Quantity</label>
           <input id="quantitySelector" defaultValue="1" type="number" min="1" max="10" onChange={this.handleQuantity}/>
           <button 
             className="product__button" 

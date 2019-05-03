@@ -1,0 +1,10 @@
+.cart { 
+  z-index: 100;
+  position: fixed;
+  background: white;
+  width: 800px;
+  min-height: 400px;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -12,16 +12,25 @@ class App extends Component {
     super();
 
     this.state = {
-      currentLineItems: []
+      currentLineItems: [],
+      cartVisible: false
     }
 
     this.addVariantToCart = this.addVariantToCart.bind(this)
+    this.showCart = this.showCart.bind(this)
   }
 
   addVariantToCart(variant, quantity) { 
     let lineItem = {variant, quantity}
     return this.setState({currentLineItems:[...this.state.currentLineItems, lineItem]})
   }
+
+  showCart(){ 
+    return this.setState({ 
+      cartVisible: !this.state.cartVisible
+    })
+  }
+
 
   render() {
 
@@ -31,12 +40,11 @@ class App extends Component {
     if (this.props.data.error) {
       return <p>{this.props.data.error.message}</p>;
     }
-    console.log(this.state)
     return (
       <div className="App">
-          <Header storeName={this.props.data.shop.name}/>
+          <Header storeName={this.props.data.shop.name} handleCartTrigger={this.showCart}/>
           <CollectionViewer collections={this.props.data.collections} addVariantToCart={this.addVariantToCart} />
-          <Cart currentLineItems={this.state.currentLineItems} checkout={this.createCheckout}></Cart>
+          <Cart currentLineItems={this.state.currentLineItems} checkout={this.createCheckout} hideCart={this.showCart} cartVisible={this.state.cartVisible}></Cart>
       </div>
     );
   }
