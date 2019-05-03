@@ -59,9 +59,12 @@ export default class Cart extends Component {
       return null
     }
     return(
+
       <section className="cart">
-        <h1>Your Cart</h1> 
-        <span onClick={this.props.hideCart}>Close</span>
+      <div className="cart__header">
+        <h1 className="cart__header__title">Your Cart</h1> 
+        <span className="cart__header__close" onClick={this.props.hideCart}>Close</span>
+      </div> 
         {this.props.currentLineItems.map(lineItem => { 
           return <p key={lineItem.variant.id}>
             {lineItem.variant.productName} 

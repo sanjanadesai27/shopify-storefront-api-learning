@@ -42,7 +42,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-          <Header storeName={this.props.data.shop.name} handleCartTrigger={this.showCart}/>
+          <Header storeName={this.props.data.shop.name} handleCartTrigger={this.showCart} quantityInCart={this.state.currentLineItems.length}/>
           <CollectionViewer collections={this.props.data.collections} addVariantToCart={this.addVariantToCart} />
           <Cart currentLineItems={this.state.currentLineItems} checkout={this.createCheckout} hideCart={this.showCart} cartVisible={this.state.cartVisible}></Cart>
       </div>

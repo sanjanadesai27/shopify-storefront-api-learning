@@ -8,17 +8,23 @@
   font-size: calc(10px + 2vmin);
 }
 
+.header__logo{
+  max-width: 100px;
+  margin-left: 10px;
+}
+
 .header__store-title { 
   font-family: "Mr Dafoe";
   font-size: 50px;
   font-weight: 100;
   flex: 1 0 auto;
   margin-top: 15px;
-  margin-left: 65px;;
+  margin-left: 65px;
 }
 
 .header__cart { 
-  flex: 0 1 100px;
+  flex: 0 1 150px;
+  text-align: right
 }
 
 

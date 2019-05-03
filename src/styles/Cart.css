@@ -7,4 +7,19 @@
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 3px 3px 3px 3px #eeeeee;
+}
+
+.cart__header { 
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart__header__title { 
+  flex: 1 0 auto;
+}
+
+.cart__header__close { 
+  flex: 0 1 auto;
+  margin: 3px;
 }

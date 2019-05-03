@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles/Product.css'
+import './styles/VariantSelector.css'
 import VariantSelector from './VariantSelector';
 
 export default class Product extends Component {
@@ -39,7 +40,7 @@ export default class Product extends Component {
     let product = {...this.props.product}
     let variant = this.state.selectedVariant
     let variantSelect = product.options.map(option => {
-      return <VariantSelector className="product__variant-select" key={option.id} option={option} handleSelect={this.handleSelect}/>
+      return <VariantSelector key={option.id} option={option} handleSelect={this.handleSelect}/>
     })
 
     return (
