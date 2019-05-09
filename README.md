@@ -21,20 +21,15 @@ You will need the following things properly installed on your computer.
 
 ## Configuring
 
-If you would like to connect your store to this example, open up `src/index.js` and update the `domain` and `storefrontAccessToken`:
+If you would like to connect your store to this example, open up `src/index.js` and update the `uri` and `X-Shopify-Storefront-Access-Token`:
 
 ```js
-const networkInterface = createNetworkInterface({ uri: 'https://your-shop-name.myshopify.com/api/graphql' });
-
-networkInterface.use([{
-  applyMiddleware(req, next) {
-    if (!req.options.headers) {
-      req.options.headers = {};
-    }
-    req.options.headers['X-Shopify-Storefront-Access-Token'] = 'your-storefront-access-token'
-    next();
-  }
-}]);
+const httpLink = createHttpLink({
+   uri: 'https://{your-store-name}.myshopify.com/api/graphql',
+   headers: {
+    'X-Shopify-Storefront-Access-Token': '{your-token-here}'
+  } 
+})
 ```
 
 ## Running
