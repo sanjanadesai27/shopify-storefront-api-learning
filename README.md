@@ -14,9 +14,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/Shopify/storefront-api-examples.git` this repository
-* `cd storefront-api-examples`
-* `cd react-apollo`
+* `git clone https://github.com/sanjanadesai27/shopify-storefront-api-learning` this repository
+* `cd shopify-storefront-api-learning`
 * `yarn install`
 
 ## Configuring
